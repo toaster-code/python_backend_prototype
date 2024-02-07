@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Cool App</title>
+    <style>
+        /* Add your custom styles here */
+        body {
+            background-color: #282c34;
+            color: #61dafb;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #61dafb;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-top: 0;
+        }
+
+        .cool-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .music-list {
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        table {
+            width: 80%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #61dafb;
+            color: #fff;
+        }
+
+        th {
+            background-color: #61dafb;
+        }
+
+        a {
+            color: #61dafb;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Cool App</h1>
+        <p>Thank you for visiting! This is a stylish welcome page for demonstration purposes.</p>
+        <img class="cool-image" src="https://picsum.photos/seed/picsum/600/300" alt="Cool Image">
+
+        <div class="music-list">
+            <h2>Music List:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Song Name</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for music in music_list %}
+                        <tr>
+                            <td><a href="{{ url_for('get_mp3', file_id=music['file_id']) }}">{{ music['name'] }}</a></td>
+                            <td>{{ music['duration'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

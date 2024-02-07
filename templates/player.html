@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Response</title>
+</head>
+<body>
+    <h1>My Music Player</h1>
+    <div id="jsonOutput">{{ custom_message }}</div>
+    <audio controls>
+        <source src="{{ mp3_url }}" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+    <p>Now playing: {{ music_name }}</p>
+</body>
+</html>
